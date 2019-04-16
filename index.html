@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test TLS Compatibility</title>
+    <script defer>
+        var checkTLS = function (tls) {
+            var tlsData = tls.tls_version.split(' ');
+            if (tlsData[0] != 'TLS' || tlsData[1] < 1.2) {
+                document.getElementById("tls-banner").style.display = "block";
+            }
+        };
+    </script>
+    <script src="https://www.howsmyssl.com/a/check?callback=checkTLS"></script>
+</head>
+
+<body>
+    <div id="tls-banner" style="display: none">
+        <img
+            src="https://storage.googleapis.com/design-production/media/story_cover/w1440/ErrorMessage_Banner_20181206090223__b2b80326.jpg" />"
+    </div>
+    <div style="background: black;height:100vh;color:white;display: flex;align-items: center;justify-content: center">
+        <h1>THIS PAGE HAS BLACK BACKGROUND</h1>
+    </div>
+</body>
+
+</html>
